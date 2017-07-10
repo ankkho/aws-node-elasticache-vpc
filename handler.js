@@ -1,7 +1,4 @@
-'use strict'
+const lib = require('./lib');
 
-// Allows billers/invoicers to create invoice based on invoiceId or customers mobileNumber
-
-const lib = require('../../lib')
-
-exports.handler = (event, context) => lib.getAllProducts(event, (error, response) => context.done(error, response))
+exports.handler = (event, context) =>
+lib.getAllProductsResponse(event, (error, response) => context.done(error, response));
