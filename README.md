@@ -7,9 +7,9 @@
 
 ### Getting Started
 
-In order to install and run this example you need an AWS account properly configured on your system. To get started with AWS account configuration, please follow this [link](https://serverless.com/framework/docs/providers/aws/guide/credentials/)
+In order to install and run this example you need an AWS accounts credentials configured with your system. To get started with AWS account configuration, please follow this [link](https://serverless.com/framework/docs/providers/aws/guide/credentials/)
 
-1. Clone repo and install npm packages
+1. Clone serverless-elasticache and install npm packages
 ```
 git clone git@github.com:ankkho/serverless-elasticache.git
 cd serverless-elasticache
@@ -20,3 +20,11 @@ npm install
 ```
 sls deploy --stage <any stage> --region <your region>
 ```
+
+### Folder Structure
+
+functions -- contains all business logic required for a function
+
+handler.js -- lambda handler
+
+lib -- acts as middleware. You can perform following operations: schema validations, checking user roles (if any) etc..
