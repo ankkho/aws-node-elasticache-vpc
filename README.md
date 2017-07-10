@@ -1,7 +1,7 @@
 [![serverless](http://public.serverless.com/badges/v3.svg)](http://www.serverless.com)
 
-# serverless-elasticache
-> A simple serverless function using elasticache (redis)
+# aws-node-elasticache-redis
+> A set of serverless functions using elasticache (redis)
 
 ---
 
@@ -9,10 +9,10 @@
 
 In order to install and run this example you need an AWS accounts credentials configured with your system. To get started with AWS account configuration, please follow this [link](https://serverless.com/framework/docs/providers/aws/guide/credentials/)
 
-1. Clone serverless-elasticache and install npm packages
+1. Clone aws-node-elasticache-redis and install npm packages
 ```
-git clone git@github.com:ankkho/serverless-elasticache.git
-cd serverless-elasticache
+git clone git@github.com:ankkho/aws-node-elasticache-redis.git
+cd aws-node-elasticache-redis
 npm install
 ```
 
