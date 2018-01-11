@@ -14,6 +14,7 @@ In order to install and run this example you need an AWS accounts credentials co
 git clone git@github.com:ankkho/aws-node-elasticache-redis.git
 cd aws-node-elasticache-redis
 npm install
+export REGION='your-desired-aws-region' eg: 'ap-south-1'
 ```
 
 2. Deploy using sls deploy

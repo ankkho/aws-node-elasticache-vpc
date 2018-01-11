@@ -4,8 +4,7 @@ provider:
   name: aws
   runtime: nodejs6.10
   stage: dev
-  profile: disvoice-${self:provider.stage}
-  region: ${env:REGION}
+  region: 'ap-south-1'
   memorySize: 128
   timeout: 10
   cfLogs: true
@@ -15,14 +14,14 @@ provider:
     environment: dev
     serviceName: serverless-sample
   environment:
-    cacheUrl: ${cf:serverless-sample-dev.cacheUrl}
-  vpc:
-    securityGroupIds:
-      - ${cf:serverless-sample-dev.VPCSecurityGroup}
-      - ${cf:serverless-sample-dev.RedisSecurityGroup}
-    subnetIds:
-      - ${cf:serverless-sample-dev.PrivateSubnetA}
-      - ${cf:serverless-sample-dev.PublicSubnetB}
+    # cacheUrl: ${cf:serverless-sample-dev.cacheUrl}
+  # vpc:
+  #   securityGroupIds:
+  #     - ${cf:serverless-sample-dev.VPCSecurityGroup}
+  #     - ${cf:serverless-sample-dev.RedisSecurityGroup}
+  #   subnetIds:
+  #     - ${cf:serverless-sample-dev.PrivateSubnetA}
+  #     - ${cf:serverless-sample-dev.PublicSubnetB}
 package:
   exclude:
     - ./node_modules/**

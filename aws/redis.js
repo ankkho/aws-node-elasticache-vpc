@@ -1,25 +1,23 @@
-const redis = require('redis');
-const bluebird = require('bluebird');
-const currentRedisEndpoint = 'redis://localhost:6379';
+/*
+	Returns promise functions for interacting with redis
+*/
 
-bluebird.promisifyAll(redis.RedisClient.prototype);
-bluebird.promisifyAll(redis.Multi.prototype);
+import redis from 'redis'
+import bluebird from 'bluebird'
 
-const createRedisClient = (endpoint) => {
-	const clientObj = redis.createClient(false, endpoint, {
-		no_ready_check: true,
-	});
+bluebird.promisifyAll(redis.RedisClient.prototype)
+bluebird.promisifyAll(redis.Multi.prototype)
+
+const createRedisClient = () => {
+	const clientObj = redis.createClient(6379, process.env.cacheURL, { no_ready_check: true })
 
 	clientObj.on('error', (err) => {
-		console.log(`Error while creating redis client: ${err}`);
-	});
+		console.log(`Error while creating redis client: ${err}`)
+	})
 
-	return clientObj;
-};
+	return clientObj
+}
 
-const client = createRedisClient(currentRedisEndpoint);
+const client = createRedisClient()
 
-
-module.exports = {
-	client,
-};
+export default client
