@@ -14,14 +14,24 @@ provider:
     environment: dev
     serviceName: serverless-sample
   environment:
-    # cacheUrl: ${cf:serverless-sample-dev.cacheUrl}
-  # vpc:
-  #   securityGroupIds:
-  #     - ${cf:serverless-sample-dev.VPCSecurityGroup}
-  #     - ${cf:serverless-sample-dev.RedisSecurityGroup}
-  #   subnetIds:
-  #     - ${cf:serverless-sample-dev.PrivateSubnetA}
-  #     - ${cf:serverless-sample-dev.PublicSubnetB}
+    cacheUrl: ${cf:serverless-sample-dev.cacheUrl}
+  iamRoleStatements:
+    - Effect: 'Allow'
+      Action:
+        - "logs:CreateLogGroup"
+        - "logs:CreateLogStream"
+        - "logs:PutLogEvents"
+        - "ec2:CreateNetworkInterface"
+        - "ec2:DeleteNetworkInterface"
+        - "ec2:DescribeNetworkInterfaces"
+      Resource: '*'
+  vpc:
+    securityGroupIds:
+      - ${cf:serverless-sample-dev.VPCSecurityGroup}
+      - ${cf:serverless-sample-dev.RedisSecurityGroup}
+    subnetIds:
+      - ${cf:serverless-sample-dev.PrivateSubnetA}
+      - ${cf:serverless-sample-dev.PublicSubnetB}
 package:
   exclude:
     - ./node_modules/**

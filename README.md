@@ -1,6 +1,6 @@
 [![serverless](http://public.serverless.com/badges/v3.svg)](http://www.serverless.com)
 
-# aws-node-elasticache-redis
+# aws-node-elasticache-vpc
 > A set of serverless functions using elasticache (redis) within VPC
 
 ---
@@ -9,27 +9,29 @@
 
 In order to install and run this example you need an AWS accounts credentials configured with your system. To get started with AWS account configuration, please follow this [link](https://serverless.com/framework/docs/providers/aws/guide/credentials/)
 
-1. Clone aws-node-elasticache-redis and install npm packages
+1. Clone aws-node-elasticache-vpc and install npm packages
 ```
-git clone git@github.com:ankkho/aws-node-elasticache-redis.git
-cd aws-node-elasticache-redis
+git clone git@github.com:ankkho/aws-node-elasticache-vpc.git
+cd aws-node-elasticache-vpc
 npm install
 export REGION='your-desired-aws-region' eg: 'ap-south-1'
 ```
 
-> Comment from line number 17 to 24. Else you'll get an error, since serverless tires to fetch those resources which are not been present yet.
+*NOTE*
+> Before you run `sls deploy`. Comment line number 17 and from 28-34. Else you'll get an error, since serverless try to fetch (elasticache and vpc) resources which are not currently present.
 
-> Once you run `sls deploy`, then uncomment those lines and run `sls deploy` once again.
+> Once deployment is done uncomment those lines and run `sls deploy` once again.
 
 *Deploy using sls deploy*
 ```
-sls deploy --stage <any stage> --region <your region>
+sls deploy
 ```
 
 ### Folder Structure
 
-functions -- contains all business logic required for a function
+> functions -- contains all business logic required for a function
 
-handler.js -- lambda handler
+> handler.js -- lambda handler
 
-lib -- acts as middleware. You can perform following operations: schema validations, checking user roles (if any) etc..
+> lib -- acts as middleware. You can perform following types of operations:
+  schema validation, check users role (if any) etc..
