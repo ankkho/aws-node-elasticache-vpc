@@ -1,7 +1,7 @@
 [![serverless](http://public.serverless.com/badges/v3.svg)](http://www.serverless.com)
 
 # aws-node-elasticache-redis
-> A set of serverless functions using elasticache (redis)
+> A set of serverless functions using elasticache (redis) within VPC
 
 ---
 
@@ -17,7 +17,11 @@ npm install
 export REGION='your-desired-aws-region' eg: 'ap-south-1'
 ```
 
-2. Deploy using sls deploy
+> Comment from line number 17 to 24. Else you'll get an error, since serverless tires to fetch those resources which are not been present yet.
+
+> Once you run `sls deploy`, then uncomment those lines and run `sls deploy` once again.
+
+*Deploy using sls deploy*
 ```
 sls deploy --stage <any stage> --region <your region>
 ```
