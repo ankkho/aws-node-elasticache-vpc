@@ -1,41 +1,65 @@
 {
-  "name": "serverless-elasticache",
-  "version": "1.0.0",
-  "description": "A simple serverless function using elasticache (redis)",
-  "main": "handler.js",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ankkho/serverless-elasticache.git"
-  },
-  "keywords": [
-    "serverless",
-    "with",
-    "elasticache",
-    "serverless",
-    "with",
-    "redis",
-    "aws lambda",
-    "with",
-    "redis"
-  ],
-  "author": "Ankit Khosla",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/ankkho/serverless-elasticache/issues"
-  },
-  "homepage": "https://github.com/ankkho/serverless-elasticache#readme",
-  "dependencies": {
-    "bluebird": "3.5.0",
-    "node-redis": "0.1.7",
-    "redis": "2.7.1",
-    "serverless": "1.12.1"
-  },
-  "devDependencies": {
-    "eslint": "^3.19.0",
-    "eslint-config-airbnb-base": "11.2.0",
-    "eslint-plugin-angular": "^3.0.0",
-    "eslint-plugin-import": "2.7.0",
-    "serverless-offline": "^3.15.0",
-    "serverless-webpack": "^4.2.0"
-  }
+    "name": "serverless-elasticache",
+    "version": "1.0.0",
+    "description": "A simple serverless function using elasticache (redis) within VPC",
+    "main": "handler.js",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/ankkho/serverless-elasticache.git"
+    },
+    "keywords": [
+        "serverless",
+        "with",
+        "elasticache",
+        "serverless",
+        "with",
+        "redis",
+        "aws lambda",
+        "with",
+        "redis"
+    ],
+    "author": "Ankit Khosla",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/ankkho/serverless-elasticache/issues"
+    },
+    "homepage": "https://github.com/ankkho/serverless-elasticache#readme",
+    "dependencies": {
+        "bluebird": "3.5.0",
+        "co": "4.6.0",
+        "node-redis": "0.1.7",
+        "redis": "2.7.1",
+        "babel-plugin-root-import": "^5.1.0",
+        "babel-polyfill": "^6.26.0"
+    },
+    "devDependencies": {
+        "aws-sdk": "2.71.0",
+        "axios": "0.16.1",
+        "babel-cli": "6.24.1",
+        "babel-core": "6.23.1",
+        "babel-eslint": "6.1.2",
+        "babel-loader": "6.4.0",
+        "babel-plugin-transform-class-properties": "6.23.0",
+        "babel-plugin-transform-regenerator": "6.22.0",
+        "babel-plugin-transform-runtime": "6.23.0",
+        "babel-preset-env": "1.2.1",
+        "babel-preset-es2015": "6.24.1",
+        "babel-preset-stage-0": "6.22.0",
+        "babel-watch": "2.0.7",
+        "compression-webpack-plugin": "^1.0.1",
+        "eslint": "3.19.0",
+        "eslint-config-airbnb": "14.1.0",
+        "eslint-config-airbnb-base": "11.2.0",
+        "eslint-plugin-angular": "3.0.0",
+        "eslint-plugin-import": "2.3.0",
+        "html-loader": "0.4.5",
+        "husky": "0.13.3",
+        "jasmine": "2.6.0",
+        "jasmine-co": "1.2.2",
+        "jasmine-diff": "0.1.2",
+        "serverless-offline": "3.13.3",
+        "serverless-webpack": "2.2.0",
+        "webpack": "3.5.5",
+        "webpack-node-externals": "1.6.0"
+    }
 }
