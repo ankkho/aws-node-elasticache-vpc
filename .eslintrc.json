@@ -1,3 +1,25 @@
 {
-    "extends": "airbnb-base"
+    "extends": "airbnb-base",
+    "env": {
+        "node": true
+    },
+    "plugins": [
+        "import"
+    ],
+    "parser": "babel-eslint",
+    "rules": {
+        "indent": [
+            2,
+            "tab"
+        ],
+        "no-tabs": 0,
+        "semi": [
+            0,
+            "never"
+        ],
+        "func-names": [
+            0,
+            "never"
+        ]
+    }
 }

@@ -1,22 +1,51 @@
-service: product
+service: serverless-sample
 
 provider:
   name: aws
   runtime: nodejs6.10
-
+  stage: dev
+  profile: disvoice-${self:provider.stage}
+  region: ${env:REGION}
+  memorySize: 128
+  timeout: 10
+  cfLogs: true
+  deploymentBucket:
+    serverSideEncryption: AES256
+  stackTags:
+    environment: dev
+    serviceName: serverless-sample
+  environment:
+    cacheUrl: ${cf:serverless-sample-dev.cacheUrl}
+  vpc:
+    securityGroupIds:
+      - ${cf:serverless-sample-dev.VPCSecurityGroup}
+      - ${cf:serverless-sample-dev.RedisSecurityGroup}
+    subnetIds:
+      - ${cf:serverless-sample-dev.PrivateSubnetA}
+      - ${cf:serverless-sample-dev.PublicSubnetB}
+package:
+  exclude:
+    - ./node_modules/**
+    - ./test/**
+    - ./.eslintrc.json
 plugins:
+  - serverless-webpack
   - serverless-offline
 
+custom:
+  webpackIncludeModules: true
 functions:
   getProductData:
     handler: handler.getProductData
     events:
-      - http:
-          path: product/data/:id
-          method: GET
+        - http:
+            path: product/data/{id}
+            method: GET
   saveProductData:
     handler: handler.saveProductData
     events:
-      - http:
-          path: product/save
-          method: POST
+        - http:
+            path: product/save
+            method: POST
+
+resources: ${file(./cf-resource.json)}
