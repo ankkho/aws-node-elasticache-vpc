@@ -27,6 +27,12 @@ export REGION='your-desired-aws-region' eg: 'ap-south-1'
 sls deploy
 ```
 
+### Warning
+> NAT Gateway is included in CF template, but it's not included in AWS Free Tier. You will be charged for using NAT Gateway.
+
+Instead of using NAT Gateway you can use NAT Instance. A NAT Instance allows you to use ec2 instance with NAT image provided by AWS. [Check out docs](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_NAT_Instance.html#basics).
+
+
 ### Folder Structure
 
 > functions -- contains all business logic required for a function

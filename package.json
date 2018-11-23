@@ -52,13 +52,12 @@
         "eslint-config-airbnb-base": "11.2.0",
         "eslint-plugin-angular": "3.0.0",
         "eslint-plugin-import": "2.3.0",
-        "html-loader": "0.4.5",
         "husky": "0.13.3",
         "jasmine": "2.6.0",
         "jasmine-co": "1.2.2",
         "jasmine-diff": "0.1.2",
-        "serverless-offline": "3.13.3",
-        "serverless-webpack": "2.2.0",
+        "serverless-offline": "^3.31.3",
+        "serverless-webpack": "^5.2.0",
         "webpack": "3.5.5",
         "webpack-node-externals": "1.6.0"
     }
