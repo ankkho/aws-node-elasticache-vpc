@@ -34,7 +34,7 @@
     },
     "devDependencies": {
         "aws-sdk": "2.71.0",
-        "axios": "0.16.1",
+        "axios": "0.18.1",
         "babel-cli": "6.24.1",
         "babel-core": "6.23.1",
         "babel-eslint": "6.1.2",
