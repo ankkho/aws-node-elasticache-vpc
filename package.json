@@ -28,7 +28,7 @@
         "bluebird": "3.5.0",
         "co": "4.6.0",
         "node-redis": "0.1.7",
-        "redis": "2.7.1",
+        "redis": "3.1.1",
         "babel-plugin-root-import": "^5.1.0",
         "babel-polyfill": "^6.26.0"
     },
